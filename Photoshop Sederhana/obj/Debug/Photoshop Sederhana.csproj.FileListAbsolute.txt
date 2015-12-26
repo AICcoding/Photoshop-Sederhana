@@ -1,0 +1,30 @@
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe.config
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.pdb
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.csprojResolveAssemblyReference.cache
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Form1.resources
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Properties.Resources.resources
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.csproj.GenerateResource.Cache
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.exe
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.pdb
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.Util.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\ZedGraph.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.pdb
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.xml
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.xml
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.Util.pdb
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.Util.xml
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\cvextern.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\msvcp120.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\msvcr120.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\opencv_ffmpeg300_64.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.GL.dll
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.GL.xml
+d:\file\visual studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Form_Matrix.resources
+D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Ubah_skala_pembesaran.resources
+D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Brightness_dan_Contras.resources
+D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Filter.resources
+D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Fourier_Transform.resources
+D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Histogram.resources
