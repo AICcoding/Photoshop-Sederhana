@@ -66,6 +66,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -303,6 +304,7 @@
             this.radioButton11.TabStop = true;
             this.radioButton11.Text = "Low Pass Filter";
             this.radioButton11.UseVisualStyleBackColor = true;
+            this.radioButton11.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
             // 
             // radioButton12
             // 
@@ -314,6 +316,7 @@
             this.radioButton12.TabStop = true;
             this.radioButton12.Text = " Filter High-Boost";
             this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
             // 
             // radioButton13
             // 
@@ -325,6 +328,7 @@
             this.radioButton13.TabStop = true;
             this.radioButton13.Text = " High Pass Filter";
             this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -358,6 +362,7 @@
             this.radioButton14.TabIndex = 13;
             this.radioButton14.Text = "Filter median";
             this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
             // 
             // radioButton15
             // 
@@ -368,6 +373,7 @@
             this.radioButton15.TabIndex = 12;
             this.radioButton15.Text = "Filter pererataan";
             this.radioButton15.UseVisualStyleBackColor = true;
+            this.radioButton15.CheckedChanged += new System.EventHandler(this.radioButton15_CheckedChanged);
             // 
             // radioButton16
             // 
@@ -380,6 +386,7 @@
             this.radioButton16.TabStop = true;
             this.radioButton16.Text = "FIlter batas";
             this.radioButton16.UseVisualStyleBackColor = true;
+            this.radioButton16.CheckedChanged += new System.EventHandler(this.radioButton16_CheckedChanged);
             // 
             // button1
             // 
@@ -389,6 +396,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Simpan";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
@@ -435,6 +443,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -458,6 +467,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button3);
             this.groupBox6.Controls.Add(this.button2);
             this.groupBox6.Controls.Add(this.groupBox4);
             this.groupBox6.Controls.Add(this.groupBox3);
@@ -470,12 +480,23 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(110, 367);
+            this.button2.Location = new System.Drawing.Point(18, 367);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 31);
             this.button2.TabIndex = 23;
             this.button2.Text = "Preview";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(110, 367);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(89, 31);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "Apply";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Filter
             // 
@@ -542,5 +563,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

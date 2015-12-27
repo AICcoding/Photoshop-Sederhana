@@ -28,7 +28,6 @@ D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Filter.resources
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Fourier_Transform.resources
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Histogram.resources
-<<<<<<< HEAD
 D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe.config
 D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.exe
 D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.pdb
@@ -60,8 +59,34 @@ D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Deb
 D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Properties.Resources.resources
 D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Ubah_skala_pembesaran.resources
 D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.csproj.GenerateResource.Cache
-=======
-D:\file\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe.config
-D:\file\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.exe
-D:\file\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.pdb
->>>>>>> 4263e548cbee74fe7daa8092ad4e18b2062815a1
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe.config
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.exe
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.pdb
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\cvextern.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\msvcp120.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\msvcr120.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\opencv_ffmpeg300_64.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.pdb
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.GL.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.Util.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.pdb
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.xml
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.pdb
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.xml
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.GL.xml
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.Util.pdb
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\Emgu.Util.xml
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\bin\Debug\zh-CN\Emgu.CV.UI.resources.dll
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.csprojResolveAssemblyReference.cache
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Brightness_dan_Contras.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Filter.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Form1.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Form_Matrix.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Fourier_Transform.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Histogram.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Properties.Resources.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Ubah_skala_pembesaran.resources
+C:\Users\Dev\Downloads\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop-Sederhana-d56e1762fe7585dc646ece629c3da662dd96607c\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.csproj.GenerateResource.Cache

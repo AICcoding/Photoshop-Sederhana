@@ -15,12 +15,13 @@ namespace Photoshop_Sederhana
 {
     public partial class Form1 : Form
     {
-        int mode, filter_standar, filter_advanced, panjang_kernel;
+        public int mode, filter_standar, filter_advanced, panjang_kernel;
         public int skala_pembesaran;
         //gambar awal = gambar asli
         //gambar edit = gambar untuk edit
         //gambar akhir = hasil olahan
-        public Image<Bgr, Byte> gambar_awal, gambar_edit, gambar_akhir;
+        public Image<Bgr, Byte> gambar_awal, gambar_edit, gambar_akhir, gambar_edit_filter;
+        public int[,] kernel;
 
 
         public Form1()
@@ -106,8 +107,8 @@ namespace Photoshop_Sederhana
         private void filterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             edit_filter();
-            button1.Enabled = true;
-            button2.Enabled = true;
+            button1.Enabled = false;
+            button2.Enabled = false;
         }
 
         private void histogramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -185,51 +186,8 @@ namespace Photoshop_Sederhana
                 gambar_awal = new Image<Bgr, byte>(pilih_gambar.FileName);
                 gambar_edit = new Image<Bgr, byte>(pilih_gambar.FileName);
                 gambar_akhir = new Image<Bgr, byte>(pilih_gambar.FileName);
-               
-                /*Byte[, ,] GetPixel_e = gambar_awal.Data; //Mengambil warna dari gambar awal
-                Byte[, ,] SetPixel_e = gambar_edit.Data; //Mengeset warna ke gambar edit
 
-                int r, g, b;
-                for (int i = 0; i < gambar_edit.Width; i++)
-                {
-                    for (int j = 0; j < gambar_edit.Height; j++)
-                    {
-                        if (i < ((panjang_kernel - 1) / 2))//pemberian nilai 0
-                        {
-                            SetPixel_e[j, i, 0] = (byte)0;
-                            SetPixel_e[j, i, 1] = (byte)0;
-                            SetPixel_e[j, i, 2] = (byte)0;
-                        }
-                        else if (j < ((panjang_kernel - 1) / 2)) //pemberian nilai 0
-                        {
-                            SetPixel_e[j, i, 0] = (byte)0;
-                            SetPixel_e[j, i, 1] = (byte)0;
-                            SetPixel_e[j, i, 2] = (byte)0;
-                        }
-                        else if (j >= (gambar_edit.Height - ((panjang_kernel - 1) / 2)))
-                        {
-                            SetPixel_e[j, i, 0] = (byte)0;
-                            SetPixel_e[j, i, 1] = (byte)0;
-                            SetPixel_e[j, i, 2] = (byte)0;
-                        }
-                        else if (i >= (gambar_edit.Width - ((panjang_kernel - 1) / 2)))
-                        {
-                            SetPixel_e[j, i, 0] = (byte)0;
-                            SetPixel_e[j, i, 1] = (byte)0;
-                            SetPixel_e[j, i, 2] = (byte)0;
-                        }
-                        else
-                        {
-                            b = GetPixel_e[(j - ((panjang_kernel - 1) / 2)), (i - ((panjang_kernel - 1) / 2)), 0];
-                            g = GetPixel_e[(j - ((panjang_kernel - 1) / 2)), (i - ((panjang_kernel - 1) / 2)), 1];
-                            r = GetPixel_e[(j - ((panjang_kernel - 1) / 2)), (i - ((panjang_kernel - 1) / 2)), 2];
-                     
-                            SetPixel_e[j, i, 0] = (byte)b;
-                            SetPixel_e[j, i, 1] = (byte)g;
-                            SetPixel_e[j, i, 2] = (byte)r;
-                        }
-                    }
-                }*/
+                //gambar_awal.Width + (panjang_kernel - 1), gambar_awal.Height + (panjang_kernel - 1)
 
                 pictureBox1.Size = new Size(gambar_awal.Width, gambar_awal.Height);
                 pictureBox2.Size = new Size(gambar_edit.Width, gambar_edit.Height);
@@ -237,6 +195,56 @@ namespace Photoshop_Sederhana
                 pictureBox1.Image = gambar_awal.ToBitmap();
                 pictureBox2.Image = gambar_edit.ToBitmap();
             
+            }
+        }
+
+        private void tambah_bingkai()
+        {
+            gambar_edit_filter = new Image<Bgr, byte>(gambar_awal.Width + (panjang_kernel - 1), gambar_awal.Height + (panjang_kernel - 1));
+
+            Byte[,,] GetPixel_e = gambar_edit.Data; //Mengambil warna dari gambar awal
+            Byte[,,] SetPixel_e = gambar_edit_filter.Data; //Mengeset warna ke gambar edit
+
+            int r, g, b;
+            for (int i = 0; i < gambar_edit_filter.Width; i++)
+            {
+                for (int j = 0; j < gambar_edit_filter.Height; j++)
+                {
+                    if (i < ((panjang_kernel - 1) / 2))//pemberian nilai 0
+                    {
+                        SetPixel_e[j, i, 0] = (byte)0;
+                        SetPixel_e[j, i, 1] = (byte)0;
+                        SetPixel_e[j, i, 2] = (byte)0;
+                    }
+                    else if (j < ((panjang_kernel - 1) / 2)) //pemberian nilai 0
+                    {
+                        SetPixel_e[j, i, 0] = (byte)0;
+                        SetPixel_e[j, i, 1] = (byte)0;
+                        SetPixel_e[j, i, 2] = (byte)0;
+                    }
+                    else if (j >= (gambar_edit_filter.Height - ((panjang_kernel - 1) / 2)))
+                    {
+                        SetPixel_e[j, i, 0] = (byte)0;
+                        SetPixel_e[j, i, 1] = (byte)0;
+                        SetPixel_e[j, i, 2] = (byte)0;
+                    }
+                    else if (i >= (gambar_edit_filter.Width - ((panjang_kernel - 1) / 2)))
+                    {
+                        SetPixel_e[j, i, 0] = (byte)0;
+                        SetPixel_e[j, i, 1] = (byte)0;
+                        SetPixel_e[j, i, 2] = (byte)0;
+                    }
+                    else
+                    {
+                        b = GetPixel_e[(j - ((panjang_kernel - 1) / 2)), (i - ((panjang_kernel - 1) / 2)), 0];
+                        g = GetPixel_e[(j - ((panjang_kernel - 1) / 2)), (i - ((panjang_kernel - 1) / 2)), 1];
+                        r = GetPixel_e[(j - ((panjang_kernel - 1) / 2)), (i - ((panjang_kernel - 1) / 2)), 2];
+
+                        SetPixel_e[j, i, 0] = (byte)b;
+                        SetPixel_e[j, i, 1] = (byte)g;
+                        SetPixel_e[j, i, 2] = (byte)r;
+                    }
+                }
             }
         }
 
@@ -487,15 +495,653 @@ namespace Photoshop_Sederhana
             a.Show();
         }
 
+        #region Filter
+        private int cari_nilai_mak(int i, int j, string RGB)
+        {
+            int r, g, b;
+            Byte[,,] GetPixel_e = gambar_edit_filter.Data;
+
+            int hasil = -1;
+            if (RGB == "red")
+            {
+                try
+                {
+                    /*b = GetPixel_e[i, j, 0];
+                    g = GetPixel_e[i, j, 1];
+                    r = GetPixel_e[i, j, 2];*/
+
+                    hasil = GetPixel_e[i, j+1, 2];
+
+                    if (hasil < GetPixel_e[i - 1, j + 1, 2])
+                        hasil = GetPixel_e[i - 1, j + 1, 2];
+
+                    if (hasil < GetPixel_e[i - 1, j, 2])
+                        hasil = GetPixel_e[i - 1, j, 2];
+
+                    if (hasil < GetPixel_e[i - 1, j - 1, 2])
+                        hasil = GetPixel_e[i - 1, j - 1, 2];
+
+                    if (hasil < GetPixel_e[i, j - 1, 2])
+                        hasil = GetPixel_e[i, j - 1, 2];
+
+                    if (hasil < GetPixel_e[i + 1, j - 1, 2])
+                        hasil = GetPixel_e[i + 1, j - 1, 2];
+
+                    if (hasil < GetPixel_e[i + 1, j, 2])
+                        hasil = GetPixel_e[i + 1, j, 2];
+
+                    if (hasil < GetPixel_e[i + 1, j + 1, 2])
+                        hasil = GetPixel_e[i + 1, j + 1, 2];
+                }
+                catch
+                {
+                    hasil = -1;
+                }
+            }
+            else if (RGB == "green")
+            {
+                try
+                {
+                    hasil = GetPixel_e[i, j + 1, 1];
+
+                    if (hasil < GetPixel_e[i - 1, j + 1, 1])
+                        hasil = GetPixel_e[i - 1, j + 1, 1];
+
+                    if (hasil < GetPixel_e[i - 1, j, 1])
+                        hasil = GetPixel_e[i - 1, j, 1];
+
+                    if (hasil < GetPixel_e[i - 1, j - 1, 1])
+                        hasil = GetPixel_e[i - 1, j - 1, 1];
+
+                    if (hasil < GetPixel_e[i, j - 1, 1])
+                        hasil = GetPixel_e[i, j - 1, 1];
+
+                    if (hasil < GetPixel_e[i + 1, j - 1, 1])
+                        hasil = GetPixel_e[i + 1, j - 1, 1];
+
+                    if (hasil < GetPixel_e[i + 1, j, 1])
+                        hasil = GetPixel_e[i + 1, j, 1];
+
+                    if (hasil < GetPixel_e[i + 1, j + 1, 1])
+                        hasil = GetPixel_e[i + 1, j + 1, 1];
+                }
+                catch
+                {
+                    hasil = -1;
+                }
+            }
+            else if (RGB == "blue")
+            {
+                try
+                {
+                    hasil = GetPixel_e[i, j + 1, 0];
+
+                    if (hasil < GetPixel_e[i - 1, j + 1, 0])
+                        hasil = GetPixel_e[i - 1, j + 1, 0];
+
+                    if (hasil < GetPixel_e[i - 1, j, 0])
+                        hasil = GetPixel_e[i - 1, j, 0];
+
+                    if (hasil < GetPixel_e[i - 1, j - 1, 0])
+                        hasil = GetPixel_e[i - 1, j - 1, 0];
+
+                    if (hasil < GetPixel_e[i, j - 1, 0])
+                        hasil = GetPixel_e[i, j - 1, 0];
+
+                    if (hasil < GetPixel_e[i + 1, j - 1, 0])
+                        hasil = GetPixel_e[i + 1, j - 1, 0];
+
+                    if (hasil < GetPixel_e[i + 1, j, 0])
+                        hasil = GetPixel_e[i + 1, j, 0];
+
+                    if (hasil < GetPixel_e[i + 1, j + 1, 0])
+                        hasil = GetPixel_e[i + 1, j + 1, 0];
+                }
+                catch
+                {
+                    hasil = -1;
+                }
+            }
+            return hasil;
+        }
+
+        private int cari_nilai_min(int i, int j, string RGB)
+        {
+            int r, g, b;
+            Byte[,,] GetPixel_e = gambar_edit_filter.Data;
+
+            int hasil = -1;
+            if (RGB == "red")
+            {
+                try
+                {
+                    /*b = GetPixel_e[i, j, 0];
+                    g = GetPixel_e[i, j, 1];
+                    r = GetPixel_e[i, j, 2];*/
+
+                    hasil = GetPixel_e[i, j + 1, 2];
+
+                    if (hasil > GetPixel_e[i - 1, j + 1, 2])
+                        hasil = GetPixel_e[i - 1, j + 1, 2];
+
+                    if (hasil > GetPixel_e[i - 1, j, 2])
+                        hasil = GetPixel_e[i - 1, j, 2];
+
+                    if (hasil > GetPixel_e[i - 1, j - 1, 2])
+                        hasil = GetPixel_e[i - 1, j - 1, 2];
+
+                    if (hasil > GetPixel_e[i, j - 1, 2])
+                        hasil = GetPixel_e[i, j - 1, 2];
+
+                    if (hasil > GetPixel_e[i + 1, j - 1, 2])
+                        hasil = GetPixel_e[i + 1, j - 1, 2];
+
+                    if (hasil > GetPixel_e[i + 1, j, 2])
+                        hasil = GetPixel_e[i + 1, j, 2];
+
+                    if (hasil > GetPixel_e[i + 1, j + 1, 2])
+                        hasil = GetPixel_e[i + 1, j + 1, 2];
+                }
+                catch
+                {
+                    hasil = -1;
+                }
+            }
+            else if (RGB == "green")
+            {
+                try
+                {
+                    hasil = GetPixel_e[i, j + 1, 1];
+
+                    if (hasil > GetPixel_e[i - 1, j + 1, 1])
+                        hasil = GetPixel_e[i - 1, j + 1, 1];
+
+                    if (hasil > GetPixel_e[i - 1, j, 1])
+                        hasil = GetPixel_e[i - 1, j, 1];
+
+                    if (hasil > GetPixel_e[i - 1, j - 1, 1])
+                        hasil = GetPixel_e[i - 1, j - 1, 1];
+
+                    if (hasil > GetPixel_e[i, j - 1, 1])
+                        hasil = GetPixel_e[i, j - 1, 1];
+
+                    if (hasil > GetPixel_e[i + 1, j - 1, 1])
+                        hasil = GetPixel_e[i + 1, j - 1, 1];
+
+                    if (hasil > GetPixel_e[i + 1, j, 1])
+                        hasil = GetPixel_e[i + 1, j, 1];
+
+                    if (hasil > GetPixel_e[i + 1, j + 1, 1])
+                        hasil = GetPixel_e[i + 1, j + 1, 1];
+                }
+                catch
+                {
+                    hasil = -1;
+                }
+            }
+            else if (RGB == "blue")
+            {
+                try
+                {
+                    hasil = GetPixel_e[i, j + 1, 0];
+
+                    if (hasil > GetPixel_e[i - 1, j + 1, 0])
+                        hasil = GetPixel_e[i - 1, j + 1, 0];
+
+                    if (hasil > GetPixel_e[i - 1, j, 0])
+                        hasil = GetPixel_e[i - 1, j, 0];
+
+                    if (hasil > GetPixel_e[i - 1, j - 1, 0])
+                        hasil = GetPixel_e[i - 1, j - 1, 0];
+
+                    if (hasil > GetPixel_e[i, j - 1, 0])
+                        hasil = GetPixel_e[i, j - 1, 0];
+
+                    if (hasil > GetPixel_e[i + 1, j - 1, 0])
+                        hasil = GetPixel_e[i + 1, j - 1, 0];
+
+                    if (hasil > GetPixel_e[i + 1, j, 0])
+                        hasil = GetPixel_e[i + 1, j, 0];
+
+                    if (hasil > GetPixel_e[i + 1, j + 1, 0])
+                        hasil = GetPixel_e[i + 1, j + 1, 0];
+                }
+                catch
+                {
+                    hasil = -1;
+                }
+            }
+            return hasil;
+        }
+
+        private int cari_median(int i, int j, String RGB)
+        {
+            Byte[,,] GetPixel_e = gambar_edit_filter.Data;
+
+            int[] data = new int[9];
+            int tmp, hasil;
+            if (RGB == "red")
+            {
+                data[0] = GetPixel_e[i, j + 1, 2];
+                data[1] = GetPixel_e[i - 1, j + 1, 2];
+                data[2] = GetPixel_e[i - 1, j, 2];
+                data[3] = GetPixel_e[i - 1, j - 1, 2];
+
+                data[4] = GetPixel_e[i, j - 1, 2];
+
+                data[5] = GetPixel_e[i + 1, j - 1, 2];
+                data[6] = GetPixel_e[i + 1, j, 2];
+                data[7] = GetPixel_e[i + 1, j + 1, 2];
+                data[8] = GetPixel_e[i, j, 2];
+            }
+            else if (RGB == "green")
+            {
+                data[0] = GetPixel_e[i, j + 1, 1];
+                data[1] = GetPixel_e[i - 1, j + 1, 1];
+                data[2] = GetPixel_e[i - 1, j, 1];
+                data[3] = GetPixel_e[i - 1, j - 1, 1];
+
+                data[4] = GetPixel_e[i, j - 1, 1];
+
+                data[5] = GetPixel_e[i + 1, j - 1, 1];
+                data[6] = GetPixel_e[i + 1, j, 1];
+                data[7] = GetPixel_e[i + 1, j + 1, 1];
+                data[8] = GetPixel_e[i, j, 1];
+            }
+            else if (RGB == "blue")
+            {
+                data[0] = GetPixel_e[i, j + 1, 0];
+                data[1] = GetPixel_e[i - 1, j + 1, 0];
+                data[2] = GetPixel_e[i - 1, j, 0];
+                data[3] = GetPixel_e[i - 1, j - 1, 0];
+
+                data[4] = GetPixel_e[i, j - 1, 0];
+
+                data[5] = GetPixel_e[i + 1, j - 1, 0];
+                data[6] = GetPixel_e[i + 1, j, 0];
+                data[7] = GetPixel_e[i + 1, j + 1, 0];
+                data[8] = GetPixel_e[i, j, 0];
+            }
+
+            for (int a = 0; a < 8; a++)
+            {
+                for (int b = 0; b < 8 - a; b++)
+                {
+                    if (data[b] > data[b + 1])
+                    {
+                        tmp = data[b];
+                        data[b] = data[b + 1];
+                        data[b + 1] = tmp;
+                    }
+                }
+            }
+            hasil = data[4];
+            return hasil;
+        }
+
+        public void filter_batas(int nilai_batas)
+        {
+            tambah_bingkai();
+            int[] nilai_mak = new int[3];
+            int[] nilai_min = new int[3];
+            int r, g, b;
+
+            Byte[,,] GetPixel_e = gambar_edit_filter.Data;
+            Byte[,,] SetPixel_e = gambar_akhir.Data;
+
+            nilai_batas = (nilai_batas - 1) / 2;
+            for (int i = nilai_batas; i < gambar_edit_filter.Height - nilai_batas; i++)
+            {
+                for (int j = nilai_batas; j < gambar_edit_filter.Width - nilai_batas; j++)
+                {
+                    nilai_mak[0] = cari_nilai_mak(i, j, "red");
+                    nilai_mak[1] = cari_nilai_mak(i, j, "green");
+                    nilai_mak[2] = cari_nilai_mak(i, j, "blue");
+
+                    nilai_min[0] = cari_nilai_min(i, j, "red");
+                    nilai_min[1] = cari_nilai_min(i, j, "green");
+                    nilai_min[2] = cari_nilai_min(i, j, "blue");
+
+                    if (GetPixel_e[i, j, 2] < nilai_min[0])
+                        r = nilai_min[0];
+                    else if (GetPixel_e[i, j, 2] > nilai_mak[0])
+                        r = nilai_mak[0];
+                    else
+                        r = GetPixel_e[i, j, 2];
+
+                    if (GetPixel_e[i, j, 1] < nilai_min[1])
+                        g = nilai_min[1];
+                    else if (GetPixel_e[i, j, 1] > nilai_mak[1])
+                        g = nilai_mak[1];
+                    else
+                        g = GetPixel_e[i, j, 1];
+
+                    if (GetPixel_e[i, j, 0] < nilai_min[2])
+                        b = nilai_min[2];
+                    else if (GetPixel_e[i, j, 0] > nilai_mak[2])
+                        b = nilai_mak[2];
+                    else
+                        b = GetPixel_e[i, j, 0];
+
+                    //SETPIXEL
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 0] = (byte)b;
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 1] = (byte)g;
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 2] = (byte)r;
+
+                    /*if (filter_advanced != -1)
+                    {
+                        gambar_hasil_sementara_e.Data[j, i, 0] = (byte)b;
+                        gambar_hasil_sementara_e.Data[j, i, 1] = (byte)g;
+                        gambar_hasil_sementara_e.Data[j, i, 2] = (byte)r;
+                    }*/
+                }
+            }
+            pictureBox2.Image = gambar_akhir.ToBitmap();
+        }
+
+        public void filter_pererataan(int nilai_batas)
+        {
+            tambah_bingkai();
+            Byte[,,] GetPixel_e = gambar_edit_filter.Data;
+            Byte[,,] SetPixel_e = gambar_akhir.Data;
+
+            int[] nilai_total = new int[3];
+            int r, g, b;
+            double tmp;
+
+            nilai_batas = (nilai_batas - 1) / 2;
+
+            for (int i = nilai_batas; i < gambar_edit_filter.Height - nilai_batas; i++)
+            {
+                for (int j = nilai_batas; j < gambar_edit_filter.Width - nilai_batas; j++)
+                {
+                    nilai_total[0] = 0; //Blue
+                    nilai_total[0] += GetPixel_e[i, j, 0];
+                    nilai_total[0] += GetPixel_e[i + 1, j - 1, 0];
+                    nilai_total[0] += GetPixel_e[i, j - 1, 0];
+                    nilai_total[0] += GetPixel_e[i - 1, j - 1, 0];
+                    nilai_total[0] += GetPixel_e[i - 1, j, 0];
+                    nilai_total[0] += GetPixel_e[i - 1, j + 1, 0];
+                    nilai_total[0] += GetPixel_e[i, j + 1, 0];
+                    nilai_total[0] += GetPixel_e[i + 1, j + 1, 0];
+
+
+                    nilai_total[1] = 0; //Green
+                    nilai_total[1] += GetPixel_e[i, j, 1];
+                    nilai_total[1] += GetPixel_e[i + 1, j - 1, 1];
+                    nilai_total[1] += GetPixel_e[i, j - 1, 1];
+                    nilai_total[1] += GetPixel_e[i - 1, j - 1, 1];
+                    nilai_total[1] += GetPixel_e[i - 1, j, 1];
+                    nilai_total[1] += GetPixel_e[i - 1, j + 1, 1];
+                    nilai_total[1] += GetPixel_e[i, j + 1, 1];
+                    nilai_total[1] += GetPixel_e[i + 1, j + 1, 1];
+
+                    nilai_total[2] = 0; //Red
+                    nilai_total[2] += GetPixel_e[i, j, 2];
+                    nilai_total[2] += GetPixel_e[i + 1, j - 1, 2];
+                    nilai_total[2] += GetPixel_e[i, j - 1, 2];
+                    nilai_total[2] += GetPixel_e[i - 1, j - 1, 2];
+                    nilai_total[2] += GetPixel_e[i - 1, j, 2];
+                    nilai_total[2] += GetPixel_e[i - 1, j + 1, 2];
+                    nilai_total[2] += GetPixel_e[i, j + 1, 2];
+                    nilai_total[2] += GetPixel_e[i + 1, j + 1, 2];
+
+
+                    tmp = Math.Round(nilai_total[0] / 9F);
+                    b = Convert.ToInt16(tmp);
+
+                    tmp = Math.Round(nilai_total[1] / 9F);
+                    g = Convert.ToInt16(tmp);
+
+                    tmp = Math.Round(nilai_total[2] / 9F);
+                    r = Convert.ToInt16(tmp);
+
+                    //SETPIXEL
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 0] = (byte)b;
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 1] = (byte)g;
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 2] = (byte)r;
+
+                    /*if (filter_advanced != -1)
+                    {
+                        gambar_hasil_sementara_e.Data[j, i, 0] = (byte)b;
+                        gambar_hasil_sementara_e.Data[j, i, 1] = (byte)g;
+                        gambar_hasil_sementara_e.Data[j, i, 2] = (byte)r;
+                    }*/
+                }
+            }
+            pictureBox2.Image = gambar_akhir.ToBitmap();
+        }
+
+        public void filter_median(int nilai_batas)
+        {
+            tambah_bingkai();
+            Byte[,,] GetPixel_e = gambar_edit_filter.Data;
+            Byte[,,] SetPixel_e = gambar_akhir.Data;
+
+            int r, g, b;
+
+            nilai_batas = (nilai_batas - 1) / 2;
+
+            for (int i = nilai_batas; i < gambar_edit_filter.Width - nilai_batas; i++)
+            {
+                for (int j = nilai_batas; j < gambar_edit_filter.Height - nilai_batas; j++)
+                {
+                    r = cari_median(i, j, "red");
+                    g = cari_median(i, j, "green");
+                    b = cari_median(i, j, "blue");
+
+                    //SETPIXEL
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 0] = (byte)b;
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 1] = (byte)g;
+                    SetPixel_e[i - nilai_batas, j - nilai_batas, 2] = (byte)r;
+
+                    /*if (filter_advanced != -1)
+                    {
+                        gambar_hasil_sementara_e.Data[j, i, 0] = (byte)b;
+                        gambar_hasil_sementara_e.Data[j, i, 1] = (byte)g;
+                        gambar_hasil_sementara_e.Data[j, i, 2] = (byte)r;
+                    }*/
+                }
+            }
+            pictureBox2.Image = gambar_akhir.ToBitmap();
+        }
+        
+        public void low_pass_filter(int nilai_batas, int panjang_kernel, int[,] kernel)
+        {
+            int sum_matrik = 0; //jumlahkan semua kernel
+            nilai_batas = (nilai_batas - 1) / 2;
+            for (int i = 0; i < panjang_kernel; i++)
+            {
+                for (int j = 0; j < panjang_kernel; j++)
+                {
+                    sum_matrik += kernel[i, j];
+                }
+            }
+
+            if (sum_matrik != 0)
+            {
+                int R, G, B, totalR, totalG, totalB;
+                tambah_bingkai();
+                for (int i = ((panjang_kernel - 1) / 2); i < gambar_edit_filter.Width - ((panjang_kernel - 1) / 2); i++)
+                {
+                    for (int j = ((panjang_kernel - 1) / 2); j < gambar_edit_filter.Height - ((panjang_kernel - 1) / 2); j++)
+                    {
+                        totalR = 0;
+                        totalG = 0;
+                        totalB = 0;
+                        for (int x = 0 - nilai_batas, k = 0; x < panjang_kernel - nilai_batas; x++, k++)
+                        {
+                            for (int y = 0 - nilai_batas, l = 0; y < panjang_kernel - nilai_batas; y++, l++)
+                            {
+                                B = gambar_edit_filter.Data[j + y, i + x, 0];
+                                G = gambar_edit_filter.Data[j + y, i + x, 1];
+                                R = gambar_edit_filter.Data[j + y, i + x, 2];
+
+                                totalR += (kernel[k, l] * R);
+                                totalG += (kernel[k, l] * G);
+                                totalB += (kernel[k, l] * B);
+                            }
+                        }
+
+                        totalR /= sum_matrik;
+                        totalG /= sum_matrik;
+                        totalB /= sum_matrik;
+
+                        /*if (totalR > 255)
+                            totalR = 255;
+                        else if (totalR < 0)
+                            totalR = 0;
+                        if (totalG > 255)
+                            totalG = 255;
+                        else if (totalG < 0)
+                            totalG = 0;
+                        if (totalB > 255)
+                            totalB = 255;
+                        else if (totalB < 0)
+                            totalB = 0;*/
+
+                        gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 0] = (byte)totalB;
+                        gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 1] = (byte)totalG;
+                        gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 2] = (byte)totalR;
+                    }
+                }
+                pictureBox2.Image = gambar_akhir.ToBitmap();
+            }
+            else
+            {
+                MessageBox.Show("Silahkan input kernel sesuai dengan aturan Low Pass Filter!");
+            }
+        }
+
+        public void high_pass_filter(int nilai_batas, int panjang_kernel, int[,] kernel)
+        {
+            nilai_batas = (nilai_batas - 1) / 2;
+
+            int R, G, B, totalR, totalG, totalB;
+            tambah_bingkai();
+            for (int i = ((panjang_kernel - 1) / 2); i < gambar_edit_filter.Width - ((panjang_kernel - 1) / 2); i++)
+            {
+                for (int j = ((panjang_kernel - 1) / 2); j < gambar_edit_filter.Height - ((panjang_kernel - 1) / 2); j++)
+                {
+                    totalR = 0;
+                    totalG = 0;
+                    totalB = 0;
+                    for (int x = 0 - nilai_batas, k = 0; x < panjang_kernel - nilai_batas; x++, k++)
+                    {
+                        for (int y = 0 - nilai_batas, l = 0; y < panjang_kernel - nilai_batas; y++, l++)
+                        {
+                            B = gambar_edit_filter.Data[j + y, i + x, 0];
+                            G = gambar_edit_filter.Data[j + y, i + x, 1];
+                            R = gambar_edit_filter.Data[j + y, i + x, 2];
+
+                            totalR += (kernel[k, l] * R);
+                            totalG += (kernel[k, l] * G);
+                            totalB += (kernel[k, l] * B);
+                        }
+                    }
+
+                    if (totalR > 255)
+                        totalR = 255;
+                    else if (totalR < 0)
+                        totalR = 0;
+                    if (totalG > 255)
+                        totalG = 255;
+                    else if (totalG < 0)
+                        totalG = 0;
+                    if (totalB > 255)
+                        totalB = 255;
+                    else if (totalB < 0)
+                        totalB = 0;
+
+                    gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 0] = (byte)totalB;
+                    gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 1] = (byte)totalG;
+                    gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 2] = (byte)totalR;
+                }
+            }
+            pictureBox2.Image = gambar_akhir.ToBitmap();
+        }
+
+        public void high_boost_filter(int nilai_batas, int panjang_kernel, int[,] kernel)
+        {
+            nilai_batas = (nilai_batas - 1) / 2;
+            bool status = true;
+
+            for (int i = 0; i < panjang_kernel; i++)
+            {
+                for (int j = 0; j < panjang_kernel; j++)
+                {
+                    if ((i != ((panjang_kernel - 1) / 2)) && (j != ((panjang_kernel - 1) / 2)))
+                    {
+                        if (kernel[i, j] != -1)
+                        {
+                            status = false;
+                        }
+                    }
+                }
+            }
+
+            if (((kernel[((panjang_kernel - 1) / 2), ((panjang_kernel - 1) / 2)]) > ((panjang_kernel * panjang_kernel) - 1)) && (status == true))
+            {
+                int R, G, B, totalR, totalG, totalB;
+                tambah_bingkai();
+                for (int i = ((panjang_kernel - 1) / 2); i < gambar_edit_filter.Width - ((panjang_kernel - 1) / 2); i++)
+                {
+                    for (int j = ((panjang_kernel - 1) / 2); j < gambar_edit_filter.Height - ((panjang_kernel - 1) / 2); j++)
+                    {
+                        totalR = 0;
+                        totalG = 0;
+                        totalB = 0;
+                        for (int x = 0 - nilai_batas, k = 0; x < panjang_kernel - nilai_batas; x++, k++)
+                        {
+                            for (int y = 0 - nilai_batas, l = 0; y < panjang_kernel - nilai_batas; y++, l++)
+                            {
+                                B = gambar_edit_filter.Data[j + y, i + x, 0];
+                                G = gambar_edit_filter.Data[j + y, i + x, 1];
+                                R = gambar_edit_filter.Data[j + y, i + x, 2];
+
+                                totalR += (kernel[k, l] * R);
+                                totalG += (kernel[k, l] * G);
+                                totalB += (kernel[k, l] * B);
+                            }
+                        }
+
+                        if (totalR > 255)
+                            totalR = 255;
+                        else if (totalR < 0)
+                            totalR = 0;
+                        if (totalG > 255)
+                            totalG = 255;
+                        else if (totalG < 0)
+                            totalG = 0;
+                        if (totalB > 255)
+                            totalB = 255;
+                        else if (totalB < 0)
+                            totalB = 0;
+
+                        gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 0] = (byte)totalB;
+                        gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 1] = (byte)totalG;
+                        gambar_akhir.Data[j - nilai_batas, i - nilai_batas, 2] = (byte)totalR;
+                    }
+                }
+                pictureBox2.Image = gambar_akhir.ToBitmap();
+            }
+            else
+            {
+                MessageBox.Show("Silahkan input kernel sesuai dengan aturan Hight bost Filter!");
+            }
+        }
+
         #endregion
 
-        
+        #endregion
 
 
-        
-        
 
-        
+
+
+
+
+
 
 
 
