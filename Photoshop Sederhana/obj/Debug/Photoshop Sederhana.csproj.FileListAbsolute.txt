@@ -28,3 +28,6 @@ D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Filter.resources
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Fourier_Transform.resources
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Histogram.resources
+D:\file\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe.config
+D:\file\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.exe
+D:\file\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.pdb
