@@ -303,6 +303,7 @@
             this.radioButton11.TabStop = true;
             this.radioButton11.Text = "Low Pass Filter";
             this.radioButton11.UseVisualStyleBackColor = true;
+            this.radioButton11.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
             // 
             // radioButton12
             // 
@@ -314,6 +315,7 @@
             this.radioButton12.TabStop = true;
             this.radioButton12.Text = " Filter High-Boost";
             this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
             // 
             // radioButton13
             // 
@@ -325,6 +327,7 @@
             this.radioButton13.TabStop = true;
             this.radioButton13.Text = " High Pass Filter";
             this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -358,6 +361,7 @@
             this.radioButton14.TabIndex = 13;
             this.radioButton14.Text = "Filter median";
             this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
             // 
             // radioButton15
             // 
@@ -368,6 +372,7 @@
             this.radioButton15.TabIndex = 12;
             this.radioButton15.Text = "Filter pererataan";
             this.radioButton15.UseVisualStyleBackColor = true;
+            this.radioButton15.CheckedChanged += new System.EventHandler(this.radioButton15_CheckedChanged);
             // 
             // radioButton16
             // 
@@ -380,6 +385,7 @@
             this.radioButton16.TabStop = true;
             this.radioButton16.Text = "FIlter batas";
             this.radioButton16.UseVisualStyleBackColor = true;
+            this.radioButton16.CheckedChanged += new System.EventHandler(this.radioButton16_CheckedChanged);
             // 
             // button1
             // 
@@ -435,6 +441,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -476,6 +483,7 @@
             this.button2.TabIndex = 23;
             this.button2.Text = "Preview";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Filter
             // 

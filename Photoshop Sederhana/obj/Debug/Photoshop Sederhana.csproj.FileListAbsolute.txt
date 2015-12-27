@@ -28,3 +28,34 @@ D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Filter.resources
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Fourier_Transform.resources
 D:\file\Visual Studio 2013\Projects\Photoshop Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Histogram.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe.config
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.exe
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.pdb
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\cvextern.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\msvcp120.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\msvcr120.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\opencv_ffmpeg300_64.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.exe
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Photoshop Sederhana.pdb
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.GL.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.Util.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.pdb
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.xml
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.pdb
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.xml
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.CV.UI.GL.xml
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.Util.pdb
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\Emgu.Util.xml
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\bin\Debug\zh-CN\Emgu.CV.UI.resources.dll
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.csprojResolveAssemblyReference.cache
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Brightness_dan_Contras.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Filter.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Form1.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Form_Matrix.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Fourier_Transform.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Histogram.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Properties.Resources.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop_Sederhana.Ubah_skala_pembesaran.resources
+D:\Ariantha Sentanu Files\GitHub\Photoshop-Sederhana\Photoshop Sederhana\obj\Debug\Photoshop Sederhana.csproj.GenerateResource.Cache
